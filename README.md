@@ -1,3 +1,5 @@
+*This guide assumes you already have a working Ubuntu WSL2 set up.*
+
 # Powershell Setup
 Run each of the following commands in Powershell with elevated permissions. **REQUIRES WINDOWS 11 PRO**.  
 If you do not have 11 Pro, look into Microsoft Activation Scripts (MAS).

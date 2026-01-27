@@ -22,6 +22,8 @@ Get-NetAdapter
 New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "THAT NAME FROM ABOVE" -Action Allow
 
 New-NetFirewallRule -DisplayName "WSL" -Direction Outbound -InterfaceAlias "THAT NAME FROM ABOVE" -Action Allow
+
+Set-NetFirewallHyperVVMSetting -Name '{40E0AC32-46A5-438A-A0B2-2B479E8F2E90}' -DefaultInboundAction Allow
 ```
 
 # WSL2 Config

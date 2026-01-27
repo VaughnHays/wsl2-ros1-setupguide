@@ -37,3 +37,5 @@ You may also want to increase the size of the VM's memory and swapfile. (also in
 swap=8589934592
 memory=6442450944
 ```
+
+Then restart your PC.

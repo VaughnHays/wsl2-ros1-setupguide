@@ -15,9 +15,13 @@ New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthe
 New-NetFirewallRule -DisplayName "WSL" -Direction Outbound -InterfaceAlias "vEthernet (WSL (Hyper-V firewall))" -Action Allow
 
 # IF THE ABOVE TWO FIREWALL COMMANDS FAIL
-New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthernet" -Action Allow
+Get-NetAdapter
 
-New-NetFirewallRule -DisplayName "WSL" -Direction Outbound -InterfaceAlias "vEthernet" -Action Allow
+# LOOK FOR THE ADAPTER WITH THE NAME 'vEthernet (<Default/External/Something else> Switch)'
+
+New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "THAT NAME FROM ABOVE" -Action Allow
+
+New-NetFirewallRule -DisplayName "WSL" -Direction Outbound -InterfaceAlias "THAT NAME FROM ABOVE" -Action Allow
 ```
 
 # WSL2 Config

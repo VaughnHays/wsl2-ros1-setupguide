@@ -13,6 +13,11 @@ New-VMSwitch -Name "External Switch" -NetAdapterName "Wi-Fi" -AllowManagementOS 
 New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthernet (WSL (Hyper-V firewall))" -Action Allow
 
 New-NetFirewallRule -DisplayName "WSL" -Direction Outbound -InterfaceAlias "vEthernet (WSL (Hyper-V firewall))" -Action Allow
+
+# IF THE ABOVE TWO FIREWALL COMMANDS FAIL
+New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthernet" -Action Allow
+
+New-NetFirewallRule -DisplayName "WSL" -Direction Outbound -InterfaceAlias "vEthernet" -Action Allow
 ```
 
 # WSL2 Config
